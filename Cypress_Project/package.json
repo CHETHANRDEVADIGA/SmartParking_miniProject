@@ -1,0 +1,30 @@
+{
+  "name": "smartparking-cypress-automation",
+  "version": "1.0.0",
+  "description": "Comprehensive Cypress Automation Suite for Smart Parking Management System",
+  "main": "cypress.config.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --browser chrome --headless",
+    "cypress:run:electron": "cypress run --headless",
+    "test": "npm run cypress:run"
+  },
+  "keywords": [
+    "cypress",
+    "smartparking",
+    "qa",
+    "automation",
+    "testing"
+  ],
+  "author": "Chethan - Senior QA Automation",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.17.0"
+  },
+  "dependencies": {
+    "docx": "^8.5.0",
+    "pdfkit": "^0.20.2",
+    "pptxgenjs": "^3.12.0",
+    "xlsx": "^0.18.5"
+  }
+}

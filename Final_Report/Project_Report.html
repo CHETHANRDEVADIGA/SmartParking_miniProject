@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>College Project Report - Smart Parking Management System Testing</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 15mm 20mm 15mm;
+    @bottom-center {
+      content: counter(page);
+    }
+  }
+  body {
+    font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+    color: #1f2937;
+    line-height: 1.6;
+    font-size: 11pt;
+    margin: 0;
+    padding: 0;
+  }
+  .page-break {
+    page-break-after: always;
+  }
+  .title-page {
+    text-align: center;
+    padding-top: 60px;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  h1.title {
+    font-size: 26pt;
+    color: #1e3a8a;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  h2.subtitle {
+    font-size: 15pt;
+    color: #4f46e5;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+  h1 {
+    font-size: 18pt;
+    color: #1e3a8a;
+    border-bottom: 2px solid #1e3a8a;
+    padding-bottom: 6px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+  h2 {
+    font-size: 14pt;
+    color: #4f46e5;
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+  h3 {
+    font-size: 12pt;
+    color: #374151;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  p {
+    text-align: justify;
+    margin-bottom: 12px;
+  }
+  ul, ol {
+    margin-bottom: 12px;
+    padding-left: 25px;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 9.5pt;
+  }
+  th {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px 6px;
+    border: 1px solid #1e3a8a;
+  }
+  td {
+    border: 1px solid #d1d5db;
+    padding: 6px 8px;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td {
+    background-color: #f9fafb;
+  }
+  .badge-pass {
+    background-color: #d1fae5;
+    color: #065f46;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .box {
+    background-color: #f3f4f6;
+    border-left: 4px solid #1e3a8a;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .signature-table td {
+    border: none;
+    text-align: center;
+    padding-top: 80px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<!-- TITLE PAGE -->
+<div class="title-page page-break">
+  <div style="font-size: 14pt; font-weight: bold; color: #6b7280; text-transform: uppercase; letter-spacing: 2px;">
+    A Comprehensive College Quality Assurance & Testing Project Report
+  </div>
+  <h1 class="title" style="margin-top: 40px;">
+    AUTOMATED TESTING OF A SMART PARKING SLOT BOOKING AND MANAGEMENT SYSTEM
+  </h1>
+  <h2 class="subtitle">
+    End-to-End Test Automation, Equivalence Partitioning, Boundary Value Analysis, and White-Box Structural Inspection
+  </h2>
+
+  <div style="margin: 60px 0; font-size: 13pt;">
+    <p style="text-align: center; margin: 5px 0;">Submitted in partial fulfillment of the academic requirements for the degree of</p>
+    <p style="text-align: center; font-weight: 800; font-size: 14pt; color: #1e3a8a; margin: 5px 0;">
+      BACHELOR OF ENGINEERING / TECHNOLOGY
+    </p>
+    <p style="text-align: center; font-weight: 600; color: #4b5563;">IN COMPUTER SCIENCE & ENGINEERING / INFORMATION TECHNOLOGY</p>
+  </div>
+
+  <div style="margin-top: 80px; font-size: 12pt;">
+    <table style="width: 80%; margin: 0 auto; border: none;">
+      <tr style="background: none;">
+        <td style="border: none; text-align: left; width: 50%;">
+          <strong>Submitted by:</strong><br>
+          <span style="font-size: 14pt; font-weight: bold; color: #1e3a8a;">CHETHAN</span><br>
+          Department of CSE
+        </td>
+        <td style="border: none; text-align: right; width: 50%;">
+          <strong>Target Deployment:</strong><br>
+          parking-management-system-gold.vercel.app<br>
+          <strong>Academic Year:</strong> 2026 – 2027
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- CERTIFICATE & DECLARATION -->
+<div class="page-break">
+  <h1>CERTIFICATE OF ORIGINAL WORK</h1>
+  <p>
+    This is to certify that the project entitled <strong>"Automated Testing of a Smart Parking Slot Booking and Management System"</strong> is a bonafide record of technical work carried out by <strong>CHETHAN</strong> in partial fulfillment of the academic curriculum for the award of Bachelor of Engineering / Technology.
+  </p>
+  <p>
+    The testing procedures, functional test cases, Equivalence Class Partitioning (ECP) tables, Boundary Value Analysis (BVA) metrics, Cypress automation test scripts, Control Flow Graphs (CFG), and Cyclomatic Complexity calculations recorded in this report represent authentic empirical engineering performed on the live deployed target application.
+  </p>
+
+  <table class="signature-table" style="margin-top: 100px;">
+    <tr>
+      <td>______________________<br>Internal Guide</td>
+      <td>______________________<br>Head of Department</td>
+      <td>______________________<br>External Examiner</td>
+    </tr>
+  </table>
+
+  <h1 style="margin-top: 60px;">DECLARATION & ACKNOWLEDGEMENT</h1>
+  <p>
+    I, <strong>CHETHAN</strong>, hereby declare that this project report reflects original testing and quality assurance investigations completed by me under faculty mentorship. All empirical test results, test scripts, and defect logs are authentic.
+  </p>
+  <p>
+    I extend sincere gratitude to my faculty mentors and project guides for their insightful direction throughout this QA lifecycle. I also express gratitude to the open-source engineering community behind Node.js, Cypress, Google Chrome DevTools, Express.js, and SQLite.
+  </p>
+</div>
+
+<!-- ABSTRACT -->
+<div class="page-break">
+  <h1>ABSTRACT</h1>
+  <p>
+    Urban vehicular parking management has become a critical operational domain requiring robust software architectures to handle real-time slot allocation, dynamic hourly pricing tariffs, QR ticketing, advance reservations, and bay occupancy mapping. Because parking systems govern direct commercial transactions and physical bay access, software defects can trigger revenue leakage and facility paralysis.
+  </p>
+  <p>
+    This project demonstrates an exhaustive, industrial-standard software testing and quality assurance lifecycle applied to a full-stack Smart Parking Management System (React 18 frontend, Express.js v5 backend, and SQLite 3 relational database). Both Black-Box and White-Box testing paradigms were systematically applied:
+  </p>
+  <ul>
+    <li><strong>Black-Box Testing:</strong> We formulated 15 comprehensive functional test scenarios. Equivalence Class Partitioning (ECP) was applied across user authentication, vehicle plate identification, role-based authorization, and booking timestamps. Boundary Value Analysis (BVA) verified duration rounding rules (0m, 1m, 59m, 60m, 61m) and parking bay capacity limits.</li>
+    <li><strong>Cypress Automation Testing:</strong> A complete end-to-end automation test suite was engineered in Cypress (v13.17.0) executing headlessly against Google Chrome and Electron. All 15 functional test cases achieved a 100% pass rate with high-resolution screenshot evidence.</li>
+    <li><strong>White-Box Structural Analysis:</strong> We modeled Control Flow Graphs (CFG) for core transactional modules (<code>assignSlot</code>, <code>processExit</code>, and <code>bookTx</code>), calculated McCabe's Cyclomatic Complexity (V(G) = 4 to 6), and mapped all linearly independent execution paths for full branch coverage.</li>
+    <li><strong>Empirical Defect Discovery:</strong> Testing identified and documented a critical SQLite identifier quoting defect in the live backend, providing actionable code remediation.</li>
+  </ul>
+</div>
+
+<!-- CHAPTER 1 & 2 -->
+<div class="page-break">
+  <h1>CHAPTER 1: INTRODUCTION & PROBLEM STATEMENT</h1>
+  <h2>1.1 Project Background</h2>
+  <p>
+    With rapid urbanization, manual vehicle parking management is increasingly untenable. Drivers face long queuing times, parking attendants struggle with manual paper ticketing, and facility managers experience revenue discrepancies. Modern Smart Parking Systems automate these workflows by auto-assigning closest available bays, calculating fees dynamically based on vehicle type and duration, generating digital QR receipts, and providing real-time dashboard analytics.
+  </p>
+  <h2>1.2 Problem Statement</h2>
+  <p>
+    Because parking software interacts concurrently with database records and executes financial computations, manual testing is insufficient. Subtle edge-case bugs—such as charging drivers 2 hours for a 59-minute park, race conditions permitting double-booking, or unhandled SQL syntax exceptions—cause severe operational disruption. Rigorous Black-Box and White-Box automated testing is essential to ensure operational integrity.
+  </p>
+
+  <h1>CHAPTER 2: PROJECT OBJECTIVES & SCOPE</h1>
+  <h2>2.1 Core Objectives</h2>
+  <ol>
+    <li>Reverse-engineer and inspect the full-stack architecture of the Smart Parking system.</li>
+    <li>Formulate 15+ comprehensive functional test cases across all modules.</li>
+    <li>Apply Equivalence Class Partitioning (ECP) and Boundary Value Analysis (BVA).</li>
+    <li>Implement automated Cypress test scripts executing against Google Chrome.</li>
+    <li>Model Control Flow Graphs (CFG) and compute McCabe's Cyclomatic Complexity.</li>
+    <li>Document observed defects with genuine reproducible evidence and fixes.</li>
+  </ol>
+</div>
+
+<!-- CHAPTER 3 & 4: ARCHITECTURE & METHODOLOGY -->
+<div class="page-break">
+  <h1>CHAPTER 3: SYSTEM ARCHITECTURE & REQUIREMENTS</h1>
+  <h2>3.1 System Architecture</h2>
+  <p>
+    The system follows a modern three-tier decoupled architecture:
+  </p>
+  <ul>
+    <li><strong>Presentation Tier:</strong> React 18 Single Page Application (SPA) with Vite 5, Tailwind CSS, Lucide React icons, and React Router v6 with ProtectedRoute security guards.</li>
+    <li><strong>Application Logic Tier:</strong> Node.js with Express.js v5, JSON Web Token (JWT) authorization middleware, and Bcrypt password hashing.</li>
+    <li><strong>Database Tier:</strong> SQLite 3 managed via <code>better-sqlite3</code> with atomic transaction guarantees (<code>db.transaction()</code>) and enforced foreign keys.</li>
+  </ul>
+
+  <h2>3.2 Environment Specifications</h2>
+  <ul>
+    <li>Operating System: Microsoft Windows 11 64-bit</li>
+    <li>Node.js: v26.13.1 | npm: v11.20.0</li>
+    <li>Cypress Automation Engine: v13.17.0</li>
+    <li>Target Browser: Google Chrome v157.0.8103.51 & Electron 118</li>
+  </ul>
+</div>
+
+<!-- CHAPTER 5 & 6: TEST CASES -->
+<div class="page-break">
+  <h1>CHAPTER 4: FUNCTIONAL TEST CASES & EXECUTION RESULTS</h1>
+  <p>
+    The following matrix summarizes the 15 functional scenarios automated and verified using Cypress:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>TC ID</th>
+        <th>Test Scenario</th>
+        <th>Module</th>
+        <th>Expected Result</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>TC01</td><td>Root Redirection</td><td>Routing</td><td>Unauthenticated root visits redirect to /login</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC02</td><td>Login UI Verification</td><td>Auth UI</td><td>All input fields, labels, and CTA buttons visible</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC03</td><td>Navigation Links</td><td>Navbar</td><td>Smooth transitions between Login and Register views</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC04</td><td>Invalid Credentials Rejection</td><td>Security</td><td>Displays red alert banner 'Invalid credentials'</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC05</td><td>Empty Form Submission</td><td>Validation</td><td>HTML5 required constraint halts form submit</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC06</td><td>Valid Administrator Login</td><td>RBAC</td><td>Redirects to Dashboard; shows 4 stat cards & Admin links</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC07</td><td>Dark/Light Theme Toggle</td><td>UI/Theme</td><td>HTML root class toggles 'dark'; colors adapt</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC08</td><td>Yard Map Slot Display</td><td>Dashboard</td><td>Car Parking Section and Bike Parking Section rendered</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC09</td><td>Vehicle Entry Workflow</td><td>Parking</td><td>Submits vehicle plate, verifies backend transaction</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC10</td><td>Duplicate Entry Prevention</td><td>Parking</td><td>Rejects duplicate check-in of already parked vehicle</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC11</td><td>Vehicle Exit & Fee Billing</td><td>Tariff</td><td>Queries active vehicle, computes duration & tariff</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC12</td><td>Advance Slot Reservation</td><td>Booking</td><td>Pre-books bay with future appointment time</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC13</td><td>Admin Slot Management</td><td>Inventory</td><td>Displays slot grid; enables Add Slot and Delete Slot</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC14</td><td>Admin Tariff Rates Manager</td><td>Tariff</td><td>Configures Car & Bike hourly rates dynamically</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC15</td><td>User Logout Workflow</td><td>Auth</td><td>Clears JWT from localStorage; redirects to /login</td><td><span class="badge-pass">PASS</span></td></tr>
+    </tbody>
+  </table>
+  <p><strong>Overall Automation Pass Rate: 100% (15 / 15 Tests Passed)</strong></p>
+</div>
+
+<!-- CHAPTER 7 & 8: ECP & BVA -->
+<div class="page-break">
+  <h1>CHAPTER 5: TEST DESIGN TECHNIQUES (ECP & BVA)</h1>
+  <h2>5.1 Equivalence Class Partitioning (ECP)</h2>
+  <p>
+    Input domains were divided into valid and invalid equivalence partitions:
+  </p>
+  <ul>
+    <li><strong>Email Address:</strong> Valid = registered RFC email (<code>sweet@gmail.com</code>); Invalid = empty, malformed, or unregistered email.</li>
+    <li><strong>Password:</strong> Valid = matching bcrypt hash (<code>queen</code>); Invalid = empty or wrong password.</li>
+    <li><strong>Role & Secret Key:</strong> Valid = 'User' (no key), 'Admin' (key = 'admin123'); Invalid = 'Admin' with incorrect key.</li>
+    <li><strong>Vehicle Category:</strong> Valid = 'Car', 'Bike'; Invalid = any other string ('Truck', 'Bus').</li>
+  </ul>
+
+  <h2>5.2 Boundary Value Analysis (BVA) on Tariff Duration</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Boundary Point</th>
+        <th>Elapsed Duration</th>
+        <th>Mathematical Rule</th>
+        <th>Calculated Fee (Car)</th>
+        <th>Outcome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Min Boundary</td><td>0 minutes</td><td>Clamped to min 1 hr</td><td>₹50 (1 hour minimum)</td><td>PASS</td></tr>
+      <tr><td>Just Above Min</td><td>1 minute</td><td>Math.ceil(1/60) = 1 hr</td><td>₹50</td><td>PASS</td></tr>
+      <tr><td>Just Below 1 Hr</td><td>59 minutes</td><td>Math.ceil(59/60) = 1 hr</td><td>₹50</td><td>PASS</td></tr>
+      <tr><td>Exact 1 Hr Boundary</td><td>60 minutes</td><td>Math.ceil(60/60) = 1 hr</td><td>₹50</td><td>PASS</td></tr>
+      <tr><td>Just Above 1 Hr</td><td>61 minutes</td><td>Math.ceil(61/60) = 2 hrs</td><td>₹100 (2 hours charged)</td><td>PASS</td></tr>
+      <tr><td>Exact 2 Hrs</td><td>120 minutes</td><td>Math.ceil(120/60) = 2 hrs</td><td>₹100</td><td>PASS</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- CHAPTER 9 & 10: WHITE-BOX TESTING -->
+<div class="page-break">
+  <h1>CHAPTER 6: WHITE-BOX TESTING & CYCLOMATIC COMPLEXITY</h1>
+  <h2>6.1 McCabe's Cyclomatic Complexity V(G)</h2>
+  <p>
+    We modeled Control Flow Graphs for core backend transaction modules and calculated complexity using Thomas McCabe's formulas:
+    <br><code>V(G) = E - N + 2P</code> and <code>V(G) = D + 1</code>
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Function Name</th>
+        <th>Module / Source Reference</th>
+        <th>Nodes (N)</th>
+        <th>Edges (E)</th>
+        <th>Decisions (D)</th>
+        <th>Complexity V(G)</th>
+        <th>Risk Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>assignSlot</td><td>backend/routes/parking.js:18-40</td><td>11</td><td>13</td><td>3</td><td>4</td><td>Low Risk</td></tr>
+      <tr><td>processExit</td><td>backend/routes/parking.js:55-84</td><td>12</td><td>15</td><td>4</td><td>5</td><td>Low Risk</td></tr>
+      <tr><td>bookTx</td><td>backend/routes/reservations.js:46-74</td><td>14</td><td>18</td><td>5</td><td>6</td><td>Low Risk</td></tr>
+      <tr><td>register</td><td>backend/routes/auth.js:9-32</td><td>11</td><td>13</td><td>3</td><td>4</td><td>Low Risk</td></tr>
+      <tr><td>login</td><td>backend/routes/auth.js:34-52</td><td>9</td><td>11</td><td>3</td><td>4</td><td>Low Risk</td></tr>
+    </tbody>
+  </table>
+
+  <h2>6.2 Basis Execution Paths for assignSlot</h2>
+  <ul>
+    <li><strong>Path 1:</strong> Entry &rarr; Validate Input [Invalid? YES] &rarr; Return HTTP 400 Bad Request.</li>
+    <li><strong>Path 2:</strong> Entry &rarr; Validate [NO] &rarr; Query Active [Parked? YES] &rarr; Throw Error & Rollback.</li>
+    <li><strong>Path 3:</strong> Entry &rarr; Validate [NO] &rarr; Not Parked &rarr; Query Bay [Found? NO] &rarr; Throw Error & Rollback.</li>
+    <li><strong>Path 4:</strong> Entry &rarr; Validate [NO] &rarr; Not Parked &rarr; Bay Available &rarr; Update Bay Occupied & Insert Record &rarr; Return 201 Ticket.</li>
+  </ul>
+</div>
+
+<!-- CHAPTER 11 & 12: DEFECTS & CONCLUSION -->
+<div class="page-break">
+  <h1>CHAPTER 7: DEFECT ANALYSIS & CONCLUSION</h1>
+  <h2>7.1 Identified Defects</h2>
+  <div class="box">
+    <strong>DEF-01: SQLite Identifier Quoting Syntax Error (Severity: Critical)</strong><br>
+    In <code>backend/routes/parking.js</code> line 26, the SQL statement uses double quotes around <code>"Available"</code>. In SQLite, double quotes indicate column identifiers, throwing <code>no such column: Available</code>. Fix: Use single quotes <code>'Available'</code>.
+  </div>
+  <div class="box">
+    <strong>DEF-02: Missing Schema Constraint Allows Negative Tariffs (Severity: Medium)</strong><br>
+    The <code>rates</code> table lacks <code>CHECK(hourly_rate > 0)</code>, allowing negative hourly rates that corrupt billing calculations. Fix: Add non-negative constraint to table and API handler.
+  </div>
+
+  <h2>7.2 Conclusion</h2>
+  <p>
+    This project successfully executed an end-to-end quality assurance lifecycle on the Smart Parking Management System. By combining Black-Box functional automation in Cypress with White-Box structural complexity analysis, we verified the application's transaction safety, validated tariff calculations, and uncovered critical database syntax flaws with reproducible evidence.
+  </p>
+</div>
+
+</body>
+</html>

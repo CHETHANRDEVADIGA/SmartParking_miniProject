@@ -1,0 +1,23 @@
+{
+  "adminCredentials": {
+    "email": "sweet@gmail.com",
+    "password": "queen",
+    "name": "Queen",
+    "role": "Admin"
+  },
+  "userCredentials": {
+    "email": "user@gmail.com",
+    "password": "user123",
+    "name": "John Doe",
+    "role": "User"
+  },
+  "invalidCredentials": {
+    "email": "invalid_user@gmail.com",
+    "password": "wrongpassword999"
+  },
+  "testVehicles": {
+    "carValid": "TN-09-AUTO-1001",
+    "bikeValid": "TN-09-MOTO-2002",
+    "invalidFormat": "INVALID@@@PARK"
+  }
+}

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 950" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1E3A8A" />
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Title Banner -->
+  <rect x="50" y="20" width="700" height="50" rx="8" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="400" y="52" fill="#FFFFFF" font-size="18" font-weight="bold" text-anchor="middle">Control Flow Graph (CFG) - assignSlot Algorithm</text>
+
+  <!-- Node 1: Entry -->
+  <rect x="300" y="95" width="200" height="40" rx="20" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="120" fill="#1E1B4B" font-size="12" font-weight="bold" text-anchor="middle">Node 1: Entry (POST /entry)</text>
+
+  <!-- Edge 1 -> 2 -->
+  <line x1="400" y1="135" x2="400" y2="165" stroke="#1E3A8A" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Node 2: Decision (Valid Input?) -->
+  <polygon points="400,165 520,210 400,255 280,210" fill="#FEF3C7" stroke="#D97706" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="205" fill="#92400E" font-size="11" font-weight="bold" text-anchor="middle">Node 2: Valid Input?</text>
+  <text x="400" y="222" fill="#78350F" font-size="9" text-anchor="middle">(plate &amp;&amp; Car/Bike)</text>
+
+  <!-- Edge 2 -> 3 (False / Invalid) -->
+  <line x1="280" y1="210" x2="160" y2="210" stroke="#DC2626" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="210" y="200" fill="#DC2626" font-size="11" font-weight="bold">False</text>
+
+  <!-- Node 3: Return 400 -->
+  <rect x="60" y="190" width="100" height="40" rx="6" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="110" y="215" fill="#991B1B" font-size="10" font-weight="bold" text-anchor="middle">Node 3: Return 400</text>
+
+  <!-- Edge 2 -> 4 (True / Valid) -->
+  <line x1="400" y1="255" x2="400" y2="295" stroke="#059669" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="410" y="280" fill="#059669" font-size="11" font-weight="bold">True</text>
+
+  <!-- Node 4: Query Active -->
+  <rect x="290" y="295" width="220" height="40" rx="6" fill="#F3F4F6" stroke="#4B5563" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="400" y="320" fill="#1F2937" font-size="11" text-anchor="middle">Node 4: Query Active Parking</text>
+
+  <!-- Edge 4 -> 5 -->
+  <line x1="400" y1="335" x2="400" y2="365" stroke="#1E3A8A" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Node 5: Decision (Already Parked?) -->
+  <polygon points="400,365 520,410 400,455 280,410" fill="#FEF3C7" stroke="#D97706" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="405" fill="#92400E" font-size="11" font-weight="bold" text-anchor="middle">Node 5: Already Parked?</text>
+  <text x="400" y="422" fill="#78350F" font-size="9" text-anchor="middle">(existing == true?)</text>
+
+  <!-- Edge 5 -> 6 (True / Duplicate) -->
+  <line x1="280" y1="410" x2="160" y2="410" stroke="#DC2626" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="210" y="400" fill="#DC2626" font-size="11" font-weight="bold">True</text>
+
+  <!-- Node 6: Throw Error (Already Parked) -->
+  <rect x="50" y="390" width="110" height="40" rx="6" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="105" y="415" fill="#991B1B" font-size="10" font-weight="bold" text-anchor="middle">Node 6: Rollback 400</text>
+
+  <!-- Edge 5 -> 7 (False / New Vehicle) -->
+  <line x1="400" y1="455" x2="400" y2="495" stroke="#059669" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="410" y="480" fill="#059669" font-size="11" font-weight="bold">False</text>
+
+  <!-- Node 7: Query Lowest Slot -->
+  <rect x="290" y="495" width="220" height="40" rx="6" fill="#F3F4F6" stroke="#4B5563" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="400" y="520" fill="#1F2937" font-size="11" text-anchor="middle">Node 7: Query Lowest Available Bay</text>
+
+  <!-- Edge 7 -> 8 -->
+  <line x1="400" y1="535" x2="400" y2="565" stroke="#1E3A8A" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Node 8: Decision (Vacant Slot Exists?) -->
+  <polygon points="400,565 520,610 400,655 280,610" fill="#FEF3C7" stroke="#D97706" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="605" fill="#92400E" font-size="11" font-weight="bold" text-anchor="middle">Node 8: Slot Available?</text>
+  <text x="400" y="622" fill="#78350F" font-size="9" text-anchor="middle">(slot !== null?)</text>
+
+  <!-- Edge 8 -> 9 (False / Full) -->
+  <line x1="280" y1="610" x2="160" y2="610" stroke="#DC2626" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="210" y="600" fill="#DC2626" font-size="11" font-weight="bold">False</text>
+
+  <!-- Node 9: Throw Error (Parking Full) -->
+  <rect x="50" y="590" width="110" height="40" rx="6" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="105" y="615" fill="#991B1B" font-size="10" font-weight="bold" text-anchor="middle">Node 9: Rollback 400</text>
+
+  <!-- Edge 8 -> 10 (True / Bay Found) -->
+  <line x1="400" y1="655" x2="400" y2="695" stroke="#059669" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="410" y="680" fill="#059669" font-size="11" font-weight="bold">True</text>
+
+  <!-- Node 10: Update Slot & Insert Record -->
+  <rect x="270" y="695" width="260" height="45" rx="6" fill="#F3F4F6" stroke="#4B5563" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="400" y="715" fill="#1F2937" font-size="10" font-weight="bold" text-anchor="middle">Node 10: UPDATE slots SET Occupied</text>
+  <text x="400" y="730" fill="#4B5563" font-size="9" text-anchor="middle">INSERT INTO parking_records</text>
+
+  <!-- Edge 10 -> 11 -->
+  <line x1="400" y1="740" x2="400" y2="780" stroke="#1E3A8A" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Node 11: Return 201 Ticket -->
+  <rect x="290" y="780" width="220" height="45" rx="20" fill="#D1FAE5" stroke="#059669" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="802" fill="#065F46" font-size="11" font-weight="bold" text-anchor="middle">Node 11: Commit &amp; Return 201</text>
+  <text x="400" y="817" fill="#047857" font-size="9" text-anchor="middle">(QR Ticket Generated)</text>
+
+  <!-- Metrics Summary Box -->
+  <rect x="540" y="320" width="220" height="260" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="650" y="345" fill="#1E3A8A" font-size="13" font-weight="bold" text-anchor="middle">CFG Metrics: assignSlot</text>
+  <line x1="560" y1="355" x2="740" y2="355" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="560" y="380" fill="#334155" font-size="10">• Total Nodes (N) = 11</text>
+  <text x="560" y="405" fill="#334155" font-size="10">• Total Edges (E) = 13</text>
+  <text x="560" y="430" fill="#334155" font-size="10">• Decision Points (D) = 3</text>
+  <text x="560" y="455" fill="#334155" font-size="10">• Connected Comp (P) = 1</text>
+  <line x1="560" y1="470" x2="740" y2="470" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="560" y="495" fill="#059669" font-size="11" font-weight="bold">V(G) = E - N + 2P = 4</text>
+  <text x="560" y="520" fill="#059669" font-size="11" font-weight="bold">V(G) = D + 1 = 4</text>
+  <text x="560" y="550" fill="#1E3A8A" font-size="10" font-weight="bold">Risk: Low (100% Testable)</text>
+</svg>

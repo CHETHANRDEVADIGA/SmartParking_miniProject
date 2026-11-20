@@ -31,7 +31,7 @@ The project implements a full lifecycle quality assurance audit, covering:
 ## 📁 Repository Directory Structure
 
 ```text
-SmartParking_Project/
+SmartParking_miniProject/
 │
 ├── README.md                           # Master Project Documentation & Execution Guide
 ├── Application_Analysis.md             # In-depth architectural analysis of the application

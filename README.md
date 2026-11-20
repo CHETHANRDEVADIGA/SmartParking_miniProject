@@ -81,7 +81,7 @@ SmartParking_miniProject/
 │   └── Project_Report.docx             # Academic report in Word format
 │
 ├── Final_PPT/                          # Presentation Deliverables
-│   └── Project_Presentation.pptx       # 15 Professional slides for viva defense
+│   └── Smart_Parking_QA_Presentation.pptx       # 15 Professional slides for viva defense
 │
 ```
 
@@ -252,7 +252,7 @@ All academic deliverables are ready for submission and evaluation:
 1. **Formal Project Report:**
    * Word Document: [`Final_Report/Project_Report.docx`](Final_Report/Project_Report.docx)
 2. **Presentation Slides:**
-   * PowerPoint: [`Final_PPT/Project_Presentation.pptx`](Final_PPT/Project_Presentation.pptx) (15 professional slides covering architecture, testing techniques, automation results, defect analysis, and future enhancements).
+   * PowerPoint: [`Final_PPT/Smart_Parking_QA_Presentation.pptx`](Final_PPT/Smart_Parking_QA_Presentation.pptx) (15 professional slides covering architecture, testing techniques, automation results, defect analysis, and future enhancements).
 
 ---
 

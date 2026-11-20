@@ -78,8 +78,7 @@ SmartParking_miniProject/
 │   └── White_Box/                      # Control Flow Graph renderings
 │
 ├── Final_Report/                       # Formal Academic Project Documentation
-│   ├── Project_Report.docx             # Academic report in Word format
-│   └── Project_Report.pdf              # Academic report in PDF format
+│   └── Project_Report.docx             # Academic report in Word format
 │
 ├── Final_PPT/                          # Presentation Deliverables
 │   └── Project_Presentation.pptx       # 15 Professional slides for viva defense
@@ -252,7 +251,6 @@ All academic deliverables are ready for submission and evaluation:
 
 1. **Formal Project Report:**
    * Word Document: [`Final_Report/Project_Report.docx`](Final_Report/Project_Report.docx)
-   * PDF Document: [`Final_Report/Project_Report.pdf`](Final_Report/Project_Report.pdf)
 2. **Presentation Slides:**
    * PowerPoint: [`Final_PPT/Project_Presentation.pptx`](Final_PPT/Project_Presentation.pptx) (15 professional slides covering architecture, testing techniques, automation results, defect analysis, and future enhancements).
 
